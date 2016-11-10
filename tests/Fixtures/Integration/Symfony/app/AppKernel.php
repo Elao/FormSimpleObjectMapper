@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new FrameworkBundle(),
             new TwigBundle(),
             new TestBundle(),
+            new Elao\FormSimpleObjectMapper\Bridge\Symfony\Bundle\ElaoFormSimpleObjectMapperBundle(),
         ];
     }
 

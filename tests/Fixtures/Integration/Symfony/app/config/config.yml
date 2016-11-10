@@ -9,8 +9,3 @@ framework:
         storage_id:                    'session.storage.mock_file'
     templating:
         engines:                       ['twig']
-
-services:
-    form.simple_object_mapper_type_extension:
-        class: Elao\FormSimpleObjectMapper\Type\Extension\SimpleObjectMapperTypeExtension
-        tags: [{ name: form.type_extension, extended_type: 'Symfony\Component\Form\Extension\Core\Type\FormType' }]
