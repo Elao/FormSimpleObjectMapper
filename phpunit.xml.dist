@@ -9,7 +9,11 @@
          processIsolation="false"
          stopOnFailure="false"
          syntaxCheck="false"
+         bootstrap="tests/Fixtures/Integration/Symfony/app/bootstrap.php"
 >
+    <php>
+        <server name="KERNEL_DIR" value="tests/Fixtures/Integration/Symfony/app/" />
+    </php>
     <testsuites>
         <testsuite name="Elao Symfony Form Simple Object Mapper Test Suite">
             <directory>./tests/</directory>
