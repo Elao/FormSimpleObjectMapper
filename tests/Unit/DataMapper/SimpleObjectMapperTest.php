@@ -192,7 +192,7 @@ class SimpleObjectMapperTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('bar', $newMedia->getAuthor());
     }
 
-    public function tesNonMappedField()
+    public function testNonMappedField()
     {
         $builder = $this->factory->createBuilder(FormType::class, new Book('foo'), ['data_class' => Media::class])
             ->add('author')
