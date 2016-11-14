@@ -10,19 +10,32 @@
 
 namespace Elao\FormSimpleObjectMapper\Tests\Fixtures\Integration\Symfony\TestBundle\Controller;
 
-use Elao\FormSimpleObjectMapper\Tests\Fixtures\Integration\Symfony\TestBundle\Form\Type\AddItemToCartType;
+use Elao\FormSimpleObjectMapper\Tests\Fixtures\Media\Book;
+use Elao\FormSimpleObjectMapper\Tests\Fixtures\Media\Media;
+use Elao\FormSimpleObjectMapper\Tests\Fixtures\Media\MediaConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\VarDumper\Test\VarDumperTestTrait;
 
-class CartController extends Controller
+class MediaController extends Controller
 {
     use VarDumperTestTrait;
 
-    public function addItemAction(Request $request)
+    public function editAction(Request $request)
     {
-        $form = $this->createForm(AddItemToCartType::class);
+        $media = new Book('John Doe');
+
+        $builder = $this
+            ->createFormBuilder($media, [
+                'data_class' => Media::class,
+                'simple_object_mapper' => new MediaConverter(),
+            ])
+            ->add('mediaType')
+            ->add('author')
+        ;
+
+        $form = $builder->getForm();
 
         $form->handleRequest($request);
 
@@ -32,7 +45,7 @@ class CartController extends Controller
             return Response::create($this->getDump($command));
         }
 
-        return $this->render('TestBundle:cart:add_item.html.twig', [
+        return $this->render('TestBundle:media:edit.html.twig', [
             'form' => $form->createView(),
         ], Response::create(
             null,

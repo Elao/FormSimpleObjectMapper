@@ -1,3 +1,7 @@
 add_item_to_cart:
     path: '/cart/add-item'
     defaults: { _controller: 'TestBundle:Cart:addItem' }
+
+edit_media:
+    path: '/media/edit'
+    defaults: { _controller: 'TestBundle:Media:edit' }

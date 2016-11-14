@@ -13,10 +13,13 @@ namespace Elao\FormSimpleObjectMapper\Tests\Unit\DataMapper;
 use Elao\FormSimpleObjectMapper\DataMapper\FormDataToObjectConverterInterface;
 use Elao\FormSimpleObjectMapper\DataMapper\ObjectToFormDataConverterInterface;
 use Elao\FormSimpleObjectMapper\DataMapper\SimpleObjectMapper;
+use Elao\FormSimpleObjectMapper\Tests\Fixtures\Media\Book;
+use Elao\FormSimpleObjectMapper\Tests\Fixtures\Media\Media;
+use Elao\FormSimpleObjectMapper\Tests\Fixtures\Media\MediaConverter;
+use Elao\FormSimpleObjectMapper\Tests\Fixtures\Media\Movie;
 use Elao\FormSimpleObjectMapper\Tests\Fixtures\Money;
 use Elao\FormSimpleObjectMapper\Tests\Fixtures\MoneyTypeConverter;
 use Symfony\Component\Form\DataMapperInterface;
-use Symfony\Component\Form\Exception\TransformationFailedException;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\FormFactoryInterface;
@@ -210,71 +213,5 @@ class FormDataToMoneyConverter extends \PHPUnit_Framework_TestCase implements Fo
 }
 
 interface ConverterStub extends FormDataToObjectConverterInterface, ObjectToFormDataConverterInterface
-{
-}
-
-class MediaConverter implements FormDataToObjectConverterInterface, ObjectToFormDataConverterInterface
-{
-    public function convertFormDataToObject(array $data, $originalData = null)
-    {
-        $author = $data['author'];
-
-        switch ($data['mediaType']) {
-            case 'movie':
-                return new Movie($author);
-            case 'book':
-                return new Book($author);
-            default:
-                throw new TransformationFailedException();
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     *
-     * @param Media|null $object
-     */
-    public function convertObjectToFormData($object)
-    {
-        if (null === $object) {
-            return [];
-        }
-
-        $mediaTypeByClass = [
-            Movie::class => 'movie',
-            Book::class => 'book',
-        ];
-
-        if (!isset($mediaTypeByClass[get_class($object)])) {
-            throw new TransformationFailedException();
-        }
-
-        return [
-            'mediaType' => $mediaTypeByClass[get_class($object)],
-            'author' => $object->getAuthor(),
-        ];
-    }
-}
-
-abstract class Media
-{
-    private $author;
-
-    public function __construct($author)
-    {
-        $this->author = $author;
-    }
-
-    public function getAuthor()
-    {
-        return $this->author;
-    }
-}
-
-class Movie extends Media
-{
-}
-
-class Book extends Media
 {
 }
