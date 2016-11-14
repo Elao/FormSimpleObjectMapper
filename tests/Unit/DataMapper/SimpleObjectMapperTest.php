@@ -191,6 +191,27 @@ class SimpleObjectMapperTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf(Movie::class, $newMedia);
         $this->assertSame('bar', $newMedia->getAuthor());
     }
+
+    public function tesNonMappedField()
+    {
+        $builder = $this->factory->createBuilder(FormType::class, new Book('foo'), ['data_class' => Media::class])
+            ->add('author')
+            ->add('mediaType', null, ['mapped' => false])
+        ;
+
+        $builder->setDataMapper(new SimpleObjectMapper(new MediaConverter()));
+        $form = $builder->getForm();
+
+        $this->assertSame('foo', $form->get('author')->getData());
+        $this->assertSame(null, $form->get('mediaType')->getData());
+
+        $form->submit(['author' => 'bar', 'mediaType' => 'movie']);
+
+        $newMedia = $form->getData();
+
+        $this->assertInstanceOf(Movie::class, $newMedia);
+        $this->assertSame('bar', $newMedia->getAuthor());
+    }
 }
 
 class FormDataToMoneyConverter extends \PHPUnit_Framework_TestCase implements FormDataToObjectConverterInterface
