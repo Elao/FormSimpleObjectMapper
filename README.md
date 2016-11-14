@@ -1,6 +1,11 @@
 Symfony Form Simple Object Mapper
 =================================
 
+[![Latest Stable Version](https://poser.pugx.org/elao/form-simple-object-mapper/v/stable?format=flat-square)](https://packagist.org/packages/elao/form-simple-object-mapper) 
+[![Total Downloads](https://poser.pugx.org/elao/form-simple-object-mapper/downloads?format=flat-square)](https://packagist.org/packages/elao/form-simple-object-mapper) 
+[![Monthly Downloads](https://poser.pugx.org/elao/form-simple-object-mapper/d/monthly?format=flat-square)](https://packagist.org/packages/elao/form-simple-object-mapper)
+[![Latest Unstable Version](https://poser.pugx.org/elao/form-simple-object-mapper/v/unstable?format=flat-square)](https://packagist.org/packages/elao/form-simple-object-mapper)
+[![License](https://poser.pugx.org/elao/form-simple-object-mapper/license?format=flat-square)](https://packagist.org/packages/elao/form-simple-object-mapper)
 [![Build Status](https://img.shields.io/travis/Elao/FormSimpleObjectMapper/master.svg?style=flat-square)](https://travis-ci.org/Elao/FormSimpleObjectMapper)
 [![Coveralls](https://img.shields.io/coveralls/Elao/FormSimpleObjectMapper.svg?style=flat-square)](https://coveralls.io/github/Elao/FormSimpleObjectMapper)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/Elao/FormSimpleObjectMapper.svg?style=flat-square)](https://scrutinizer-ci.com/g/Elao/FormSimpleObjectMapper/?branch=master)
@@ -23,7 +28,9 @@ Table of Contents
 
 # Installation
 
-Soon on packagist.org...
+```sh
+$ composer require elao/form-simple-object-mapper
+ ```
 
 ## With Symfony Full Stack framework
 
