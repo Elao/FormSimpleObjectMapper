@@ -10,6 +10,7 @@ Symfony Form Simple Object Mapper
 [![Coveralls](https://img.shields.io/coveralls/Elao/FormSimpleObjectMapper.svg?style=flat-square)](https://coveralls.io/github/Elao/FormSimpleObjectMapper)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/Elao/FormSimpleObjectMapper.svg?style=flat-square)](https://scrutinizer-ci.com/g/Elao/FormSimpleObjectMapper/?branch=master)
 [![Symfony](https://img.shields.io/badge/Symfony-%202.8%2F3.1%2B-green.svg?style=flat-square "Available for Symfony 2.8 and 3.1+")](https://symfony.com)
+[![php](https://img.shields.io/badge/PHP-7-green.svg?style=flat-square "Available for Symfony 2.8 and 3.1+")](https://symfony.com)
 
 This library aims to ease immutable or value objects mapping with the Symfony Form component, based on [Bernhard Schussek (Webmozart)](https://github.com/webmozart)'s blog post: ["Value Objects in Symfony Forms"](https://webmozart.io/blog/2015/09/09/value-objects-in-symfony-forms/), until a decision on https://github.com/symfony/symfony/pull/19367 is made.
 
