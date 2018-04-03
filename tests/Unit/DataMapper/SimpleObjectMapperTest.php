@@ -3,7 +3,7 @@
 /*
  * This file is part of the "elao/form-simple-object-mapper" package.
  *
- * Copyright (C) 2016 Elao
+ * Copyright (C) Elao
  *
  * @author Elao <contact@elao.com>
  */
@@ -19,6 +19,7 @@ use Elao\FormSimpleObjectMapper\Tests\Fixtures\Media\MediaConverter;
 use Elao\FormSimpleObjectMapper\Tests\Fixtures\Media\Movie;
 use Elao\FormSimpleObjectMapper\Tests\Fixtures\Money;
 use Elao\FormSimpleObjectMapper\Tests\Fixtures\MoneyTypeConverter;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\DataMapperInterface;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -26,7 +27,7 @@ use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\Forms;
 
-class SimpleObjectMapperTest extends \PHPUnit_Framework_TestCase
+class SimpleObjectMapperTest extends TestCase
 {
     /** @var FormFactoryInterface */
     protected $factory;
@@ -214,7 +215,7 @@ class SimpleObjectMapperTest extends \PHPUnit_Framework_TestCase
     }
 }
 
-class FormDataToMoneyConverter extends \PHPUnit_Framework_TestCase implements FormDataToObjectConverterInterface
+class FormDataToMoneyConverter extends TestCase implements FormDataToObjectConverterInterface
 {
     private $originalData;
 

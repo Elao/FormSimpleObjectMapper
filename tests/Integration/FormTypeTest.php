@@ -3,7 +3,7 @@
 /*
  * This file is part of the "elao/form-simple-object-mapper" package.
  *
- * Copyright (C) 2016 Elao
+ * Copyright (C) Elao
  *
  * @author Elao <contact@elao.com>
  */
@@ -72,6 +72,8 @@ class FormTypeTest extends FormIntegrationTestCase
                 'simple_object_mapper' => $value,
             ]
         );
+
+        $this->addToAssertionCount(1);
     }
 
     public function testSimpleObjectMapperOptionSetsDataMapper()

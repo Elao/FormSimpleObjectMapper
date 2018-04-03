@@ -1,13 +1,21 @@
 framework:
-    secret:                           'elao'
-    form:                             true
+    secret: 'elao'
+    form: true
     router:
-        resource:                     '%kernel.root_dir%/config/routing.yml'
-        strict_requirements:          '%kernel.debug%'
-    test:                              ~
+        resource: '%kernel.root_dir%/config/routing.yml'
+        strict_requirements: '%kernel.debug%'
+    test: ~
     session:
-        storage_id:                    'session.storage.mock_file'
+        storage_id: 'session.storage.mock_file'
     templating:
-        engines:                       ['twig']
+        engines: ['twig']
     assets: false
-    annotations: false
+    validation: { enable_annotations: false }
+
+twig:
+    strict_variables: true
+
+services:
+    logger:
+        class: Psr\Log\NullLogger
+        public: false
