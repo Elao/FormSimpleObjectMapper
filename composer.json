@@ -25,28 +25,33 @@
     },
     "prefer-stable": true,
     "minimum-stability": "dev",
+    "config": {
+        "sort-packages": true
+    },
     "require": {
         "php": ">=5.6",
-        "symfony/form": "^2.8|^3.1"
+        "symfony/form": "^2.8|^3.1|^4.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.0",
-        "phpunit/phpunit": "^5.6",
-        "symfony/browser-kit": "^2.8|^3.1",
-        "symfony/css-selector": "^2.8|^3.1",
-        "symfony/dom-crawler": "^2.8|^3.1",
-        "symfony/filesystem": "^2.8|^3.1",
-        "symfony/framework-bundle": "^2.8|^3.1",
-        "symfony/http-foundation": "^2.8|^3.1",
-        "symfony/phpunit-bridge": "^2.8|^3.1",
-        "symfony/twig-bundle": "^2.8|^3.1",
-        "symfony/validator": "^2.8|^3.1",
-        "symfony/var-dumper": "^2.8.11|^3.1",
-        "symfony/templating": "^2.8|^3.1"
+        "friendsofphp/php-cs-fixer": "^2.8",
+        "phpspec/prophecy": "~1.0",
+        "symfony/browser-kit": "^2.8|^3.4|^4.0",
+        "symfony/css-selector": "^2.8|^3.4|^4.0",
+        "symfony/dom-crawler": "^2.8|^3.4|^4.0",
+        "symfony/finder": "^2.8.11|^3.4|^4.0",
+        "symfony/filesystem": "^2.8|^3.4|^4.0",
+        "symfony/framework-bundle": "^2.8|^3.4|^4.0",
+        "symfony/http-foundation": "^2.8|^3.4|^4.0",
+        "symfony/phpunit-bridge": "^3.4|^4.0",
+        "symfony/templating": "^2.8|^3.4|^4.0",
+        "symfony/twig-bundle": "^2.8|^3.4|^4.0",
+        "symfony/validator": "^2.8|^3.4|^4.0",
+        "symfony/var-dumper": "^2.8.11|^3.4|^4.0",
+        "symfony/yaml": "^2.8.11|^3.4|^4.0"
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0.x-dev"
+            "dev-master": "1.1.x-dev"
         }
     }
 }

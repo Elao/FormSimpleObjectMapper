@@ -3,7 +3,7 @@
 /*
  * This file is part of the "elao/form-simple-object-mapper" package.
  *
- * Copyright (C) 2016 Elao
+ * Copyright (C) Elao
  *
  * @author Elao <contact@elao.com>
  */
@@ -11,8 +11,9 @@
 namespace Elao\FormSimpleObjectMapper\Tests\Unit\DataMapper;
 
 use Elao\FormSimpleObjectMapper\DataMapper\CallbackFormDataToObjectConverter;
+use PHPUnit\Framework\TestCase;
 
-class CallbackFormDataToObjectConverterTest extends \PHPUnit_Framework_TestCase
+class CallbackFormDataToObjectConverterTest extends TestCase
 {
     public function testConvertFormDataToObject()
     {
