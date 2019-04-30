@@ -1,3 +1,8 @@
+:warning: This package is abandoned in favor of using https://github.com/sensiolabs-de/rich-model-forms-bundle with the `factory` option and a callable.  
+See https://github.com/sensiolabs-de/rich-model-forms-bundle/blob/master/docs/factory_value_object.md#initializing-objects for more infos.
+
+---
+
 Symfony Form Simple Object Mapper
 =================================
 
